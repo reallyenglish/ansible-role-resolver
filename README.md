@@ -23,7 +23,7 @@ None
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| resolver\_nameservers | a list of resolvers | [] |
+| `resolver_nameservers` | list of resolvers | `[]` |
 
 # Dependencies
 
