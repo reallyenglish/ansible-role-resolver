@@ -14,8 +14,10 @@ describe file("/etc/resolv.conf") do
     its(:content) { should match(/nameserver 192\.168\.1\.2\nnameserver 192\.168\.1\.3\nnameserver 192\.168\.1\.1/) }
   when "default-openbsd-60-amd64"
     its(:content) { should match(/nameserver 192\.168\.1\.2\nnameserver 192\.168\.1\.1\nnameserver 192\.168\.1\.3/) }
-  when "default-ubuntu-1404-amd64", "default-centos-73-x86-64"
+  when "default-ubuntu-1404-amd64"
     its(:content) { should match(/nameserver 192\.168\.1\.3\nnameserver 192\.168\.1\.2\nnameserver 192\.168\.1\.1/) }
+  when "default-centos-73-x86-64"
+    its(:content) { should match(/nameserver 192\.168\.1\.3\nnameserver 192\.168\.1\.1\nnameserver 192\.168\.1\.2/) }
   else
     its(:content) { should match(/nameserver 192\.168\.1\.2\nnameserver 192\.168\.1\.3\nnameserver 192\.168\.1\.1/) }
   end
