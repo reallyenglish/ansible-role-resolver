@@ -1,1 +1,4 @@
 name_servers="{{ resolver_nameservers | join(' ') }}"
+{% if resolver_options | length %}
+resolv_conf_options="{{ resolver_options | join(' ') }}"
+{% endif %}
