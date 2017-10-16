@@ -62,3 +62,10 @@ suites:
     verifier:
       name: shell
       command: rspec -c -f d -I tests/serverspec tests/serverspec/default_spec.rb
+  - name: options
+    provisioner:
+      name: ansible_playbook
+      playbook: tests/serverspec/options.yml
+    verifier:
+      name: shell
+      command: rspec -c -f d -I tests/serverspec tests/serverspec/options_spec.rb
