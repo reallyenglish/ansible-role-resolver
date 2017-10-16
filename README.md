@@ -24,6 +24,7 @@ None
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `resolver_nameservers` | list of resolvers | `[]` |
+| `resolver_search_domains`     | list of search domains   | `[]` |
 
 # Dependencies
 
@@ -41,6 +42,9 @@ None
       - 192.168.1.2
       - 192.168.1.3
     resolver_nameservers: "{{ nameservers | predictable_shuffle(ansible_fqdn) | list }}"
+    resolver_search_domains:
+      - example.com
+      - example.net
 ```
 
 # License

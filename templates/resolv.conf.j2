@@ -1,3 +1,6 @@
 {% for n in resolver_nameservers %}
 nameserver {{ n }}
 {% endfor %}
+{% if resolver_search_domains | length %}
+search {{ resolver_search_domains | join(' ') }}
+{% endif %}
