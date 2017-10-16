@@ -24,6 +24,7 @@ None
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `resolver_nameservers` | list of resolvers | `[]` |
+| `resolver_options`     | list of options   | `[]` |
 
 # Dependencies
 
@@ -41,6 +42,10 @@ None
       - 192.168.1.2
       - 192.168.1.3
     resolver_nameservers: "{{ nameservers | predictable_shuffle(ansible_fqdn) | list }}"
+    resolver_options:
+      - timeout:1
+      - attempts:1
+      - rotate
 ```
 
 # License
