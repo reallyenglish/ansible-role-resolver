@@ -1,7 +1,6 @@
 {% for n in resolver_nameservers %}
 nameserver {{ n }}
 {% endfor %}
-
 {% if resolver_options | length %}
 options {{ resolver_options | join(' ') }}
 {% endif %}
